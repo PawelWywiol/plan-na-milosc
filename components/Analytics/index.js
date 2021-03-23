@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 const FACEBOOK_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
-const GTMEvent = function () {
-  window && window.dataLayer && window.dataLayer.push(...arguments);
+const GTMEvent = function (data) {
+  window && window.dataLayer && window.dataLayer.push(data);
 };
 
 const FBEvent = function (name) {
@@ -35,8 +35,8 @@ const FBEvent = function (name) {
 };
 
 const SendEvent = function (event) {
+  GTMEvent({ event: event });
   FBEvent(event);
-  GTMEvent({ event });
 };
 
 const AnalyticsManager = function () {

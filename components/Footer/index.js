@@ -24,7 +24,7 @@ const Footer = () => (
         url={"https://plannamilosc.pl/"}
         quote={"Sprawdź, jakim typem randkowicza jesteś!"}
         onClick={() => {
-          SendEvent("facebook-share");
+          SendEvent("FacebookShare");
         }}
       >
         <FacebookIcon />
@@ -33,7 +33,7 @@ const Footer = () => (
         url={"https://plannamilosc.pl/"}
         title={"Sprawdź, jakim typem randkowicza jesteś!"}
         onClick={() => {
-          SendEvent("twitter-share");
+          SendEvent("TwitterShare");
         }}
       >
         <TwitterIcon />
@@ -43,7 +43,7 @@ const Footer = () => (
         title={"Sprawdź, jakim typem randkowicza jesteś!"}
         separator=":: "
         onClick={() => {
-          SendEvent("whatsup-share");
+          SendEvent("WhatsupShare");
         }}
       >
         <WhatsappIcon />
@@ -52,7 +52,7 @@ const Footer = () => (
         url={"https://plannamilosc.pl/"}
         title={"Sprawdź, jakim typem randkowicza jesteś!"}
         onClick={() => {
-          SendEvent("telegram-share");
+          SendEvent("TelegramShare");
         }}
       >
         <TelegramIcon />
@@ -63,7 +63,8 @@ const Footer = () => (
       <Button
         color="primary"
         onClick={() => {
-          SendEvent("zdobadz-swoj-plan-na-milosc-tutaj");
+          SendEvent("LinkZdobadzSwojPlanNaMiloscTutaj");
+          return false;
         }}
         href="https://rcl.ink/QUGhn"
       >
@@ -74,7 +75,13 @@ const Footer = () => (
     <center>
       <small>
         Copyright © 2021{" "}
-        <a href="https://www.znak.com.pl/">
+        <a
+          href="https://www.znak.com.pl/"
+          onClick={(e) => {
+            SendEvent("link_do_znak_com_pl");
+            return false;
+          }}
+        >
           Społeczny Instytut Wydawniczy Znak Sp. z o.o.
         </a>
       </small>

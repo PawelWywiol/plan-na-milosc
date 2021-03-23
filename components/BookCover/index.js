@@ -31,7 +31,8 @@ const ButtonWrapper = styled.p`
 export default function BookCover() {
   const onClick = () => {
     SendEvent("AddToCart");
-    SendEvent("kup-na-empik-com");
+    SendEvent("KupNaEmpikCom");
+    return false;
   };
   return (
     <BookCoverWrapper>

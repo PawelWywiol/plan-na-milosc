@@ -213,7 +213,7 @@ export default function TestSection() {
       result.push("odwlekacz");
     }
 
-    SendEvent("quiz-wynik-" + result.join("-"));
+    SendEvent("QuizWynik" + result.join(""));
 
     setMode(result.join("-"));
   };
@@ -237,7 +237,7 @@ export default function TestSection() {
         <p style={{ textAlign: "center" }}>
           <Button
             onClick={() => {
-              SendEvent("quiz-start");
+              SendEvent("QuizStart");
               setMode("test");
             }}
             color="primary"
@@ -267,19 +267,25 @@ export default function TestSection() {
                   </CardContent>
                   <ButtonsWrapper>
                     <Button
-                      onClick={() => addPoints(i, 1)}
+                      onClick={() => {
+                        addPoints(i, 1);
+                      }}
                       color={points[i] === 1 ? "light" : "primary"}
                     >
                       To mnie nie dotyczy
                     </Button>
                     <Button
-                      onClick={() => addPoints(i, 2)}
+                      onClick={() => {
+                        addPoints(i, 2);
+                      }}
                       color={points[i] === 2 ? "light" : "primary"}
                     >
                       Czasem się zdarza
                     </Button>
                     <Button
-                      onClick={() => addPoints(i, 3)}
+                      onClick={() => {
+                        addPoints(i, 3);
+                      }}
                       color={points[i] === 3 ? "light" : "primary"}
                     >
                       Wypisz, wymaluj ja
@@ -293,13 +299,15 @@ export default function TestSection() {
             <NavContent>
               <NavButton
                 prev
-                onClick={() => setSlide(slide > 0 ? slide - 1 : slide)}
+                onClick={() => {
+                  setSlide(slide > 0 ? slide - 1 : slide);
+                }}
               />
               <NavButton
                 next
-                onClick={() =>
-                  setSlide(slide + 1 < attitudes.length ? slide + 1 : slide)
-                }
+                onClick={() => {
+                  setSlide(slide + 1 < attitudes.length ? slide + 1 : slide);
+                }}
               />
             </NavContent>
           </NavWrapper>
@@ -352,7 +360,8 @@ export default function TestSection() {
           <Button
             color="primary"
             onClick={() => {
-              SendEvent("kup-teraz-ksiazke-na-empik-com");
+              SendEvent("LinkKupTerazKsiazkeNaEmpikCom");
+              return false;
             }}
             href="https://rcl.ink/5Dzw2"
           >
@@ -383,7 +392,7 @@ export default function TestSection() {
         <p style={{ textAlign: "center" }}>
           <Button
             onClick={() => {
-              SendEvent("quiz-reset");
+              SendEvent("QuizReset");
               setPoints(new Array(attitudes.length).fill(0));
               setMode("");
             }}
