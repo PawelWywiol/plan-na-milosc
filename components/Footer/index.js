@@ -1,4 +1,4 @@
-import { SendEvent } from "../Analytics";
+import { SendEvent, ClickEventWrapper } from "../Analytics";
 
 import {
   FacebookShareButton,
@@ -60,7 +60,7 @@ const Footer = () => (
     </p>
     <br />
     <p style={{ textAlign: "center" }}>
-      <Button
+      {/* <Button
         color="primary"
         onClick={() => {
           SendEvent("LinkZdobadzSwojPlanNaMiloscTutaj");
@@ -69,13 +69,22 @@ const Footer = () => (
         href="https://rcl.ink/QUGhn"
       >
         Zdobądź swój plan na miłość tutaj
-      </Button>
+      </Button> */}
+      <ClickEventWrapper
+        component={Button}
+        eventname={["LinkZdobadzSwojPlanNaMiloscTutaj"]}
+        aria-label={"Zdobądź swój plan na miłość tutaj"}
+        href="https://rcl.ink/QUGhn"
+        color="primary"
+      >
+        Zdobądź swój plan na miłość tutaj
+      </ClickEventWrapper>
     </p>
     <br />
     <center>
       <small>
         Copyright © 2021{" "}
-        <a
+        {/* <a
           href="https://www.znak.com.pl/"
           onClick={(e) => {
             SendEvent("link_do_znak_com_pl");
@@ -83,7 +92,16 @@ const Footer = () => (
           }}
         >
           Społeczny Instytut Wydawniczy Znak Sp. z o.o.
-        </a>
+        </a> */}
+        <ClickEventWrapper
+          component={"a"}
+          eventname={["LinkDoZnakComPL"]}
+          aria-label={"Społeczny Instytut Wydawniczy Znak Sp. z o.o."}
+          href="https://www.znak.com.pl/"
+          color="primary"
+        >
+          Społeczny Instytut Wydawniczy Znak Sp. z o.o.
+        </ClickEventWrapper>
       </small>
     </center>
   </Section>

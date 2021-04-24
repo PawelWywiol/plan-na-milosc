@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import styled from "@emotion/styled";
 
+import { SendEvent } from "../Analytics";
 import { Button } from "../index";
 
 const CookiesWrapper = styled.div`
@@ -44,7 +45,13 @@ export default function CoockiesBar() {
             potrzeb.
           </TextWrapper>
           <ButtonWrapper>
-            <Button color="dark" onClick={() => setVisibility(false)}>
+            <Button
+              color="dark"
+              onClick={() => {
+                setVisibility(false);
+                SendEvent("CloseCookies");
+              }}
+            >
               ok
             </Button>
           </ButtonWrapper>

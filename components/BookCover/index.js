@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { SendEvent } from "../Analytics";
+import { ClickEventWrapper } from "../Analytics";
 
 import { Button } from "../index";
 
@@ -44,9 +44,30 @@ export default function BookCover() {
         />
       </ImageWrapper>
       <ButtonWrapper>
-        <Button color="primary" onClick={onClick} href="https://rcl.ink/QUGhn">
+        {/* <Button color="primary" onClick={onClick} href="https://rcl.ink/QUGhn">
           Kup na empik.com
         </Button>
+        <Button color="primary" onClick={onClick} href="https://woblink.com/ebook/plan-na-milosc-czyli-jak-stworzyc-fajny-zwiazek-aleksandra-gietka-ostrowska-logan-ury-211911u">
+          Kup na woblink.com
+        </Button> */}
+        <ClickEventWrapper
+          component={Button}
+          eventname={["KupNaEmpikCom", "AddToCart"]}
+          aria-label={"Kup na empik.com"}
+          href="https://rcl.ink/QUGhn"
+          color="primary"
+        >
+          Kup na empik.com
+        </ClickEventWrapper>
+        <ClickEventWrapper
+          component={Button}
+          eventname={["KupNaWoblink"]}
+          aria-label={"Kup na woblink.com"}
+          href="https://woblink.com/ebook/plan-na-milosc-czyli-jak-stworzyc-fajny-zwiazek-aleksandra-gietka-ostrowska-logan-ury-211911u"
+          color="primary"
+        >
+          Kup na woblink.com
+        </ClickEventWrapper>
       </ButtonWrapper>
     </BookCoverWrapper>
   );

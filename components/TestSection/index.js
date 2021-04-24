@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import styled from "@emotion/styled";
 
-import { SendEvent } from "../Analytics";
+import { SendEvent, ClickEventWrapper } from "../Analytics";
 
 import { Button } from "../index";
 
@@ -357,7 +357,7 @@ export default function TestSection() {
           wasze słabości, a przyjaciele znają je jak nikt inny.
         </p>
         <p style={{ textAlign: "center" }}>
-          <Button
+          {/* <Button
             color="primary"
             onClick={() => {
               SendEvent("LinkKupTerazKsiazkeNaEmpikCom");
@@ -366,7 +366,25 @@ export default function TestSection() {
             href="https://rcl.ink/5Dzw2"
           >
             Kup teraz książkę na Empik.com
-          </Button>
+          </Button> */}
+          <ClickEventWrapper
+            component={Button}
+            eventname={["LinkKupTerazKsiazkeNaEmpikCom"]}
+            aria-label={"Kup teraz książkę na Empik.com"}
+            href="https://rcl.ink/5Dzw2"
+            color="primary"
+          >
+            Kup teraz książkę na Empik.com
+          </ClickEventWrapper>
+          <ClickEventWrapper
+            component={Button}
+            eventname={["LinkKupTerazKsiazkeNaWoblinkCom"]}
+            aria-label={"Kup teraz książkę na Woblink.com"}
+            href="https://woblink.com/ebook/plan-na-milosc-czyli-jak-stworzyc-fajny-zwiazek-aleksandra-gietka-ostrowska-logan-ury-211911u"
+            color="primary"
+          >
+            Kup teraz książkę na Woblink.com
+          </ClickEventWrapper>
         </p>
         <p>
           Skoro posiadacie już pewną wiedzę na swój temat, jeśli chodzi o

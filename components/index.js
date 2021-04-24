@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 
+import { ClickEventWrapper } from "./Analytics";
+
 const Button = styled.a`
   line-height: 1.2;
   border-radius: 6px;
@@ -16,7 +18,7 @@ const Button = styled.a`
   text-transform: uppercase;
   background-color: var(--light-background);
   color: var(--light-text);
-  margin: var(--gap-md) auto;
+  margin: var(--gap-sm) auto;
   cursor: pointer;
   box-shadow: 0px 8px 2px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--primary-text);
@@ -132,4 +134,4 @@ const Section = ({ children, color, background }) => (
   </SectionWrapper>
 );
 
-export { Section, Sides, Side, Button };
+export { Section, Sides, Side, Button, ClickEventWrapper };
