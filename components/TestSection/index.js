@@ -357,16 +357,6 @@ export default function TestSection() {
           wasze słabości, a przyjaciele znają je jak nikt inny.
         </p>
         <p style={{ textAlign: "center" }}>
-          {/* <Button
-            color="primary"
-            onClick={() => {
-              SendEvent("LinkKupTerazKsiazkeNaEmpikCom");
-              return false;
-            }}
-            href="https://rcl.ink/5Dzw2"
-          >
-            Kup teraz książkę na Empik.com
-          </Button> */}
           <ClickEventWrapper
             component={Button}
             eventname={["LinkKupTerazKsiazkeNaEmpikCom"]}

@@ -60,16 +60,6 @@ const Footer = () => (
     </p>
     <br />
     <p style={{ textAlign: "center" }}>
-      {/* <Button
-        color="primary"
-        onClick={() => {
-          SendEvent("LinkZdobadzSwojPlanNaMiloscTutaj");
-          return false;
-        }}
-        href="https://rcl.ink/QUGhn"
-      >
-        Zdobądź swój plan na miłość tutaj
-      </Button> */}
       <ClickEventWrapper
         component={Button}
         eventname={["LinkZdobadzSwojPlanNaMiloscTutaj"]}
@@ -84,15 +74,6 @@ const Footer = () => (
     <center>
       <small>
         Copyright © 2021{" "}
-        {/* <a
-          href="https://www.znak.com.pl/"
-          onClick={(e) => {
-            SendEvent("link_do_znak_com_pl");
-            return false;
-          }}
-        >
-          Społeczny Instytut Wydawniczy Znak Sp. z o.o.
-        </a> */}
         <ClickEventWrapper
           component={"a"}
           eventname={["LinkDoZnakComPL"]}

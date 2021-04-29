@@ -44,12 +44,6 @@ export default function BookCover() {
         />
       </ImageWrapper>
       <ButtonWrapper>
-        {/* <Button color="primary" onClick={onClick} href="https://rcl.ink/QUGhn">
-          Kup na empik.com
-        </Button>
-        <Button color="primary" onClick={onClick} href="https://woblink.com/ebook/plan-na-milosc-czyli-jak-stworzyc-fajny-zwiazek-aleksandra-gietka-ostrowska-logan-ury-211911u">
-          Kup na woblink.com
-        </Button> */}
         <ClickEventWrapper
           component={Button}
           eventname={["KupNaEmpikCom", "AddToCart"]}
